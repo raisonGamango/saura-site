@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Danardi OL</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+    :root {
+      --bg-color: #080914;
+      --card-bg: rgba(18, 20, 40, 0.65);
+      --card-border: rgba(0, 243, 255, 0.18);
+      --neon-cyan: #00f3ff;
+      --neon-purple: #b026ff;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(176, 38, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 243, 255, 0.12) 0%, transparent 40%);
+      font-family: 'Rajdhani', sans-serif;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    /* Container */
+    .wrapper {
+      max-width: 1150px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Navigation Header */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 30px;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+      margin-bottom: 30px;
+    }
+
+    .brand-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    }
+
+    .brand-logo span {
+      color: var(--neon-cyan);
+    }
+
+    .nav-badge {
+      background: rgba(0, 243, 255, 0.1);
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    /* Hero Banner / Page Header */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-description {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Stats Grid */
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px 30px;
+      text-align: center;
+      min-width: 220px;
+      flex: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--neon-cyan);
+      margin-bottom: 6px;
+    }
+
+    .stat-number.purple {
+      color: #e099ff;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-main);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section Headings */
+    .section-heading {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    /* About Feature Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.25);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--neon-cyan);
+      margin-bottom: 16px;
+    }
+
+    .about-card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .about-card-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* Mission & Vision Box */
+    .mission-box {
+      background: rgba(12, 14, 28, 0.85);
+      border: 1px solid var(--neon-purple);
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(176, 38, 255, 0.15);
+    }
+
+    .mission-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      color: #e099ff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mission-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 243, 255, 0.1);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 1.6rem;
+      }
+      .page-subtitle {
+        font-size: 1rem;
+      }
+      .stats-container {
+        flex-direction: column;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+      <div class="brand-logo">SAURA <span>SITE</span></div>
+      <div class="nav-badge">ABOUT US</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="page-title">About Saura Site Digital Ministry</h1>
+      <h2 class="page-subtitle">Preserving Cultural Heritage, Sacred Literature & Multilingual Wisdom</h2>
+      <p class="page-description">
+        <strong>SSDM</strong> <strong><em>( Saura Site Digital Ministry )</em></strong> is a dedicated digital ecosystem created to preserve, digitize, and distribute indigenous literature, holy scriptures including <strong>Royong Ol</strong> and <strong>Roitad Baibol</strong> parallel bible study in 5 different languages, spiritual music lyrics, and interactive learning tools across local and global communities.
+      </p>
+    </section>
+
+    <!-- Highlight Stats -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Song Lyrics Languages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number purple">5</div>
+        <div class="stat-label">Core App Languages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Digital Access</div>
+      </div>
+    </div>
+
+    <!-- Core Pillars Grid -->
+    <h3 class="section-heading">What We Build & Preserve</h3>
+    <section class="about-grid">
+      
+      <!-- Card 1 -->
+      <div class="about-card">
+        <div class="card-icon">📖</div>
+        <h4 class="about-card-title">Holy Scriptures & Literature</h4>
+        <p class="about-card-text">
+          Digitizing essential literature including <em>Royong Ol</em> and traditional heritage texts like <em>Sanenken</em> into high-quality, responsive web and mobile interfaces for future generations.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="about-card">
+        <div class="card-icon">✝️</div>
+        <h4 class="about-card-title">Bible Study & Notes</h4>
+        <p class="about-card-text">
+          Offering structured Bible study guides and Christian notes in 5 core languages (Saura, Odia, Telugu, Hindi, and English), enabling deep spiritual comprehension across regions.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="about-card">
+        <div class="card-icon">🎵</div>
+        <h4 class="about-card-title">Global Song Lyrics Platform</h4>
+        <p class="about-card-text">
+          A massive repository containing Christian song lyrics in over 300 languages, complete with community upload capabilities for public sharing and contribution.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="about-card">
+        <div class="card-icon">🧠</div>
+        <h4 class="about-card-title">Interactive Quizzes</h4>
+        <p class="about-card-text">
+          Engaging spiritual quizzes and language learning tools designed to test knowledge, strengthen faith, and enhance multilingual vocabulary in real time.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-box">
+      <div class="mission-title">
+        <span>✦</span> Our Mission & Vision
+      </div>
+      <p class="mission-text">
+        Our core goal is to bridge ancient cultural roots with modern digital accessibility. By leveraging intuitive UI design, multi-language switching, and interactive technology, Danardi OL ensures that spiritual literature and regional scripts remain accessible to anyone, anywhere.
+      </p>
+      <p class="mission-text">
+        Whether you are seeking daily scripture study, contributing song lyrics, or participating in spiritual quizzes, Danardi OL serves as your complete digital spiritual companion.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      &copy; Danardi OL Digital Platform. All rights reserved.
+    </footer>
+  </div>
+
+</body>
+</html>
