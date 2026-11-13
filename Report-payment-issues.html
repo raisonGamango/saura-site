@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Subscription & Payment Problem - Danardi OL</title>
+  <link rel="canonical" href="https://www.saurasite.com/report-payment-issue/" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+    :root {
+      --bg-color: #080914;
+      --card-bg: rgba(18, 20, 40, 0.65);
+      --card-border: rgba(0, 243, 255, 0.18);
+      --neon-cyan: #00f3ff;
+      --neon-purple: #b026ff;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(176, 38, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 243, 255, 0.12) 0%, transparent 40%);
+      font-family: 'Rajdhani', sans-serif;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 30px;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+      margin-bottom: 30px;
+    }
+
+    .brand-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    }
+
+    .brand-logo span {
+      color: var(--neon-cyan);
+    }
+
+    .nav-badge {
+      background: rgba(176, 38, 255, 0.15);
+      border: 1px solid var(--neon-purple);
+      color: #e099ff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-description {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .help-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .help-card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .help-card-title span {
+      color: var(--neon-cyan);
+    }
+
+    .help-card-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .form-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+    }
+
+    .form-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(8, 9, 20, 0.8);
+      border: 1px solid rgba(0, 243, 255, 0.25);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+    }
+
+    select.form-control {
+      cursor: pointer;
+    }
+
+    select.form-control option {
+      background: #080914;
+      color: #fff;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 0;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      box-shadow: 0 0 30px rgba(0, 243, 255, 0.7);
+      transform: translateY(-2px);
+    }
+
+    /* Success message state container */
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .success-box h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--neon-cyan);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .success-box p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Loading overlay inside form */
+    #loadingOverlay {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: var(--neon-cyan);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .support-notice {
+      background: rgba(12, 14, 28, 0.85);
+      border: 1px solid rgba(176, 38, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .support-notice-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.05rem;
+      color: #e099ff;
+      margin-bottom: 8px;
+    }
+
+    .support-notice-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 243, 255, 0.1);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="brand-logo">DANARDI <span>OL</span></div>
+      <div class="nav-badge">PAYMENT HELP CENTER</div>
+    </header>
+
+    <section class="hero-section">
+      <h1 class="page-title">Report Payment & Subscription Issue</h1>
+      <h2 class="page-subtitle">Encountered a problem during checkout or account activation?</h2>
+      <p class="page-description">
+        If your payment was debited but your plan status is not active, or if you encountered any error during transaction, submit your details below for manual verification.
+      </p>
+    </section>
+
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="help-card-title"><span>⏳</span> Wait 2 to 5 Minutes</div>
+        <div class="help-card-text">UPI and Banking servers can occasionally delay payment webhooks. Try logging out and back into the app.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-card-title"><span>✉️</span> Check Registered Email</div>
+        <div class="help-card-text">Ensure the email ID entered during payment matches the exact account registered on Danardi OL.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-card-title"><span>💳</span> Save Your UTR / Txn ID</div>
+        <div class="help-card-text">Keep your UPI Reference Number or Bank Transaction ID ready to attach in your report below.</div>
+      </div>
+    </div>
+
+    <!-- Payment Issue Form Container -->
+    <div class="form-container">
+      
+      <form id="supportForm">
+        <h3 class="form-title" id="formHeaderTitle">Submit Support Ticket</h3>
+
+        <div id="loadingOverlay">Submitting your ticket to support... Please wait.</div>
+
+        <div id="formFieldsWrapper">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="fName" class="form-control" placeholder="Enter your registered full name" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Registered Account Email ID *</label>
+            <input type="email" id="fEmail" class="form-control" placeholder="e.g. name@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mobile Number / WhatsApp</label>
+            <input type="tel" id="fPhone" class="form-control" placeholder="Enter your contact number" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Selected Subscription Plan *</label>
+            <select id="fPlan" class="form-control" required>
+              <option value="">-- Choose Your Plan --</option>
+              <option value="Basic Plan (₹200 / 5 Years)">Basic Plan (₹200 / 5 Years)</option>
+              <option value="Monthly Pass (₹299 / Month)">Monthly Pass (₹299 / Month)</option>
+              <option value="Master Plan (₹2000 / 10 Years)">Master Plan (₹2000 / 10 Years)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Transaction ID / UTR / Reference Number *</label>
+            <input type="text" id="fTxn" class="form-control" placeholder="e.g. UPI Ref / Bank Txn ID / Order ID" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Issue Category *</label>
+            <select id="fCategory" class="form-control" required>
+              <option value="">-- Select Problem Type --</option>
+              <option value="Payment Deducted but Subscription Not Active">Payment Deducted but Subscription Not Active</option>
+              <option value="Payment Failed / Pending Status">Payment Failed / Pending Status</option>
+              <option value="Double Payment Deducted">Double Payment Deducted</option>
+              <option value="Unable to Complete Payment">Unable to Complete Payment</option>
+              <option value="Report New Subscription Online">Report New Subscription Online</option>
+              <option value="Other Technical Issue">Other Technical Issue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Describe Your Issue *</label>
+            <textarea id="fDesc" class="form-control" placeholder="Provide additional payment details, bank used, time of transaction, or error messages..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Submit Report Ticket</button>
+        </div>
+
+        <!-- Success Message Box (Hidden by default) -->
+        <div id="successBox" class="success-box">
+          <h3>✅ Ticket Submitted Successfully!</h3>
+          <p>Your issue has been recorded directly into our support system under reference code: <strong id="assignedTicketId" style="color:var(--neon-cyan)"></strong>.</p>
+          <p style="margin-top: 15px;">Our support team will manually review your transaction and update your account within 2 to 24 business hours.</p>
+        </div>
+
+      </form>
+    </div>
+
+    <section class="support-notice">
+      <div class="support-notice-title">✦ Direct Resolution Commitment</div>
+      <p class="support-notice-text">
+        All reported payment problems are manually reviewed by our support desk. Ticket resolutions and subscription activations are usually verified within 2 to 24 business hours.
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      &copy; Danardi OL & Saura Site Support. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- GOOGLE APPS SCRIPT SUBMISSION LISTENER -->
+  <script>
+    document.getElementById('supportForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById('fName').value.trim(),
+        email: document.getElementById('fEmail').value.trim(),
+        phone: document.getElementById('fPhone').value.trim(),
+        plan: document.getElementById('fPlan').value,
+        txn: document.getElementById('fTxn').value.trim(),
+        category: document.getElementById('fCategory').value,
+        desc: document.getElementById('fDesc').value.trim()
+      };
+
+      // UI Loading States
+      document.getElementById('formFieldsWrapper').style.display = 'none';
+      document.getElementById('formHeaderTitle').style.display = 'none';
+      document.getElementById('loadingOverlay').style.display = 'block';
+
+      // ⚠️ WEB APP URL
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzbmT8UtQ4Pu3Mt4H5TzQOk03eUwIV6JG4buyKcFoX8ueenslXPw6HfNm1Rw4qZdz2r/exec";
+
+      // Call Google Apps Script backend using fetch()
+      fetch(WEB_APP_URL, {
+        method: "POST",
+        // Using text/plain prevents strict CORS preflight checks, while still passing JSON data
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(res => {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        
+        if (res && res.success) {
+          document.getElementById('assignedTicketId').innerText = res.ticketID || 'TICKET-OK';
+          document.getElementById('successBox').style.display = 'block';
+        } else {
+          alert(res.message || "Failed to submit ticket. Please try again.");
+          document.getElementById('formFieldsWrapper').style.display = 'block';
+          document.getElementById('formHeaderTitle').style.display = 'block';
+        }
+      })
+      .catch(err => {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        alert("Server connection error. Please try again.");
+        console.error("Submission error:", err);
+        document.getElementById('formFieldsWrapper').style.display = 'block';
+        document.getElementById('formHeaderTitle').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
