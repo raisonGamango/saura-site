@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SSDIGITAL</title>
+    <!-- Loading Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Loading Inter font for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased py-10 px-4 sm:px-6 lg:px-8 selection:bg-blue-200 selection:text-blue-900">
+
+    <main class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        
+        <!-- Header Section -->
+        <header class="bg-slate-900 text-white py-12 px-8 sm:px-12 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">Privacy Policy</h1>
+            <p class="text-slate-400 text-sm sm:text-base font-medium">How we collect, use, and protect your personal and application data.</p>
+        </header>
+
+        <div class="px-8 py-10 sm:px-12 space-y-10">
+            
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Introduction</h2>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    This Privacy Policy describes how <strong>SS DIGITAL (Saura Site)</strong> and its affiliates (collectively Danardi Ol, we, our, us) collect, use, share, protect or otherwise process your information/ personal data through our website and application 
+                    <a href="https://www.saurasite.com" class="text-blue-600 hover:text-blue-800 hover:underline font-medium transition-colors" target="_blank" rel="noopener noreferrer">https://www.saurasite.com</a> 
+                    (hereinafter referred to as Platform). 
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mt-4">
+                    <p class="font-semibold text-blue-900 text-sm sm:text-base leading-relaxed">
+                        By visiting this Platform, providing your information, or linking your third-party accounts (such as Google), you expressly agree to be bound by the terms of this Privacy Policy.
+                    </p>
+                </div>
+            </section>
+
+            <!-- MANDATORY GOOGLE COMPLIANCE SECTION -->
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Google API Services User Data Policy (Limited Use)</h2>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-5 rounded-r-lg mb-4 shadow-sm">
+                    <p class="text-sm sm:text-base leading-relaxed text-emerald-900 font-medium">
+                        Our application's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="underline hover:text-emerald-700">Google API Services User Data Policy</a>, including the Limited Use requirements.
+                    </p>
+                </div>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600">
+                    When you authorize our app via Google OAuth, we request access to <strong>name, date of birth, address, telephone/mobile number, email ID.</strong> We strictly use this data to <strong>generate automated reports on your dashboard</strong>. We do not use this data for serving advertisements, and we do not sell this data to third-party data brokers.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Data Collection</h2>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    We collect your personal data when you use our Platform or authorize integrations. The information we collect includes:
+                </p>
+                <ul class="list-disc pl-5 sm:pl-8 space-y-2 text-sm sm:text-base text-slate-600 mb-4">
+                    <li>Personal data provided during sign-up such as <strong>name and email ID</strong>.</li>
+                    <li><strong>OAuth Data:</strong> Authentication tokens and specific data points granted by you via third-party providers like Google to enable core app functionalities.</li>
+                    <li>Payment instrument information (collected securely via our payment gateways, if applicable).</li>
+                </ul>
+                
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-6 shadow-sm">
+                    <div class="flex items-start">
+                        <svg class="h-6 w-6 text-amber-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <p class="text-amber-900 text-sm sm:text-base font-medium leading-relaxed">
+                            <strong>Security Alert:</strong> If you receive an email or call claiming to be <strong>8144458940</strong> seeking sensitive personal data like banking passwords, do not provide it. Report it immediately.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Data Usage & Sharing</h2>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    We use your personal data to provide the services you request, resolve disputes, troubleshoot problems, and enforce our terms and conditions. 
+                </p>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    <strong>Third-Party Sharing:</strong> We may disclose standard account data to third parties such as business partners and service providers to facilitate our app's operations. However, <strong>data obtained through Google Workspace APIs is strictly ring-fenced</strong>. We will never share, transfer, or sell your Google API data to third parties for advertising, spamming, or alternative data-broker purposes. 
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Security Precautions</h2>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    To protect your personal data from unauthorised access or disclosure, we adopt reasonable security practices. All API tokens and sensitive integrations are encrypted in transit and at rest. While we adhere to strict security guidelines, users are responsible for ensuring the protection of their login credentials.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 border-b pb-2 border-slate-100">Data Revocation, Deletion and Retention</h2>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    <strong>Account Deletion:</strong> You have the option to delete your account by visiting your profile settings on our Platform, which will permanently delete your associated data from our servers. 
+                </p>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-4">
+                    <strong>Revoking Google Access:</strong> You can revoke our application's access to your Google Account at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" class="text-blue-600 hover:underline">Google Security Settings</a>. Upon revoking access, we will immediately cease accessing your Google data and delete previously fetched API data from our active databases.
+                </p>
+            </section>
+
+            <!-- Grievance Officer Contact Card -->
+            <section class="mt-12 pt-8 border-t border-slate-200">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-xl border border-slate-100 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                        <svg class="h-6 w-6 text-slate-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                        </svg>
+                        Grievance Officer
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm sm:text-base text-slate-700">
+                        <div>
+                            <p class="mb-2"><span class="font-semibold text-slate-900">Name:</span> Raisana Gamango</p>
+                            <p class="mb-2"><span class="font-semibold text-slate-900">Office:</span> SS DIGITAL (Saura Site)</p>
+                            <p class="mb-2"><span class="font-semibold text-slate-900">Designation:</span> Founder/CEO</p>
+                        </div>
+                        <div>
+                            <p class="mb-2"><span class="font-semibold text-slate-900">Contact Us:</span> <br class="sm:hidden"> <a href="tel:+918144458940" class="text-blue-600 hover:underline">8144458940</a>, <a href="tel:+917655082507" class="text-blue-600 hover:underline">7655082507</a></p>
+                            <p class="mb-2"><span class="font-semibold text-slate-900">Timings:</span> Monday - Sunday (9:00 - 18:00)</p>
+                        </div>
+                        <div class="md:col-span-2 mt-2 pt-4 border-t border-slate-200">
+                            <p><span class="font-semibold text-slate-900">Address:</span> Main Road, Tarajasing, Gajapati, Odisha, 761207</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        
+        <footer class="bg-slate-100 py-6 text-center border-t border-slate-200">
+            <p class="text-sm text-slate-500">&copy; <script>document.write(new Date().getFullYear())</script> SSDIGITAL. All rights reserved.</p>
+        </footer>
+    </main>
+
+</body>
+</html>
