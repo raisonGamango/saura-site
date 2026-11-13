@@ -1,574 +1,115 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head><script src="https://cdn.tailwindcss.com"></script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Saura Site - Digital Ministry</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://www.saurasite.com/" rel="canonical">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --primary-divine: #ffd700; /* Spiritual Gold */
-            --accent-sky: #87ceeb; /* Heavenly Blue */
-            --bg-deep: #050a14;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-hover: rgba(255, 255, 255, 0.08);
-            --text-light: #f8fafc;
-            --text-sub: #cbd5e1;
-            --border-glass: rgba(255, 255, 255, 0.1);
-            --ease: cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body, html {
-            background-color: var(--bg-deep);
-            color: var(--text-light);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* --- Animated Spiritual Background --- */
-        .divine-background {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: radial-gradient(circle at top center, #0f1c3a 0%, #050a14 80%);
-            overflow: hidden;
-        }
-
-        .light-shafts {
-            position: absolute;
-            width: 200%; height: 200%;
-            top: -50%; left: -50%;
-            background: repeating-linear-gradient(60deg, rgba(255,215,0,0.015) 0px, rgba(255,215,0,0) 100px, rgba(135,206,235,0.015) 200px);
-            animation: moveLight 25s linear infinite;
-        }
-
-        @keyframes moveLight {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* --- Sticky Top Header --- */
-        .portal-header {
-            height: 70px;
-            background: rgba(5, 10, 20, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-glass);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .portal-logo {
-            font-family: 'Cinzel', serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--text-light);
-            letter-spacing: 1.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .portal-logo span { color: var(--primary-divine); }
-
-        .live-tag {
-            font-size: 0.75rem;
-            color: var(--accent-sky);
-            background: rgba(135, 206, 235, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(135, 206, 235, 0.2);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* --- Hero / Spiritual Intro Section --- */
-        .hero-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 3.5rem 1.5rem 2rem 1.5rem;
-            position: relative;
-        }
-
-        .divine-symbol {
-            position: relative;
-            width: 70px; height: 105px;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 15px var(--primary-divine));
-            animation: pulseSymbol 4s ease-in-out infinite;
-        }
-
-        .divine-symbol::before, .divine-symbol::after {
-            content: '';
-            position: absolute;
-            background: linear-gradient(180deg, var(--primary-divine), var(--accent-sky));
-            border-radius: 10px;
-        }
-
-        .divine-symbol::before { width: 8px; height: 100%; left: 50%; transform: translateX(-50%); }
-        .divine-symbol::after { width: 100%; height: 8px; top: 35%; left: 0; }
-        
-        .dove-icon {
-            position: absolute;
-            top: -10px; left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            opacity: 0.9;
-            color: #fff;
-            animation: floatDove 6s ease-in-out infinite;
-        }
-
-        @keyframes floatDove {
-            0%, 100% { transform: translate(-50%, 0px); filter: drop-shadow(0 0 5px #fff); }
-            50% { transform: translate(-50%, -15px); filter: drop-shadow(0 0 15px var(--accent-sky)); }
-        }
-
-        @keyframes pulseSymbol {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--primary-divine)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 0 25px var(--accent-sky)); }
-        }
-
-        .ministry-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, var(--text-light) 30%, var(--primary-divine), var(--accent-sky));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.3rem;
-        }
-
-        .ministry-tagline {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--accent-sky);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-
-        .ministry-motto {
-            font-size: 1.15rem;
-            font-style: italic;
-            font-weight: 500;
-            color: var(--primary-divine);
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
-            max-width: 750px;
-            line-height: 1.5;
-        }
-
-        .ministry-desc {
-            max-width: 800px;
-            font-size: 1rem;
-            color: var(--text-sub);
-            line-height: 1.7;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-        }
-
-        /* --- Action Cards Grid --- */
-        .cards-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 5rem 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .action-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: all 0.4s var(--ease);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .action-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s var(--ease);
-        }
-
-        .action-card:hover {
-            transform: translateY(-8px);
-            background: var(--card-hover);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.1);
-        }
-
-        .action-card:hover::before { transform: translateX(100%); }
-
-        /* Card Custom Highlights */
-        .card-primary {
-            border-color: rgba(135, 206, 235, 0.4);
-            background: linear-gradient(180deg, rgba(135,206,235,0.05) 0%, rgba(0,0,0,0) 100%);
-        }
-        .card-primary:hover {
-            border-color: var(--accent-sky);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(135, 206, 235, 0.2);
-        }
-
-        .card-warning {
-            border-color: rgba(255, 99, 71, 0.4);
-            background: linear-gradient(180deg, rgba(255,99,71,0.05) 0%, rgba(0,0,0,0) 100%);
-        }
-        .card-warning:hover {
-            border-color: #ff6347;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 99, 71, 0.2);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-            font-family: 'Cinzel', serif;
-        }
-
-        .card-desc {
-            font-size: 0.88rem;
-            color: var(--text-sub);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card-btn {
-            background: transparent;
-            color: var(--primary-divine);
-            border: 1px solid var(--primary-divine);
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .action-card:hover .card-btn {
-            background: var(--primary-divine);
-            color: var(--bg-deep);
-        }
-
-        .card-primary:hover .card-btn {
-            background: var(--accent-sky);
-            color: var(--bg-deep);
-            border-color: var(--accent-sky);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border-glass);
-            color: var(--text-sub);
-            font-size: 0.85rem;
-            background: rgba(5, 10, 20, 0.8);
-            position: relative;
-            z-index: 10;
-        }
-
-        @media (max-width: 768px) {
-            .ministry-title { font-size: 2.2rem; }
-            .ministry-tagline { font-size: 0.9rem; }
-            .ministry-motto { font-size: 1rem; }
-            .portal-header { padding: 0 1rem; }
-        }
-    </style>
-</link><script src="https://cdn.tailwindcss.com"></script><style>
-[data-merged-from="Test Home.html"] { position:relative; }
-[data-merged-from="Test Home.html"] .bg-white,
-[data-merged-from="Test Home.html"] .bg-slate-50 {
-  background: rgba(8, 18, 37, .88) !important; color: #f8fafc !important;
-  border-color: rgba(255,255,255,.12) !important;
-}
-[data-merged-from="Test Home.html"] h1,
-[data-merged-from="Test Home.html"] h2,
-[data-merged-from="Test Home.html"] h3,
-[data-merged-from="Test Home.html"] h4,
-[data-merged-from="Test Home.html"] strong { color: #fff !important; }
-[data-merged-from="Test Home.html"] p,
-[data-merged-from="Test Home.html"] li { color: #dbeafe !important; }
-[data-merged-from="Test Home.html"] .bg-primary-900 { background: linear-gradient(135deg,#10254a,#07101f) !important; }
-</style></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Saura Site Digital Ministry — faith, language, and cultural resources for the Saura community." />
+  <link rel="canonical" href="https://www.saurasite.com/" />
+  <title>Saura Site - Digital Ministry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: dark; --gold:#ffd700; --sky:#87ceeb; --bg:#050a14; --muted:#cbd5e1; --border:rgba(255,255,255,.12); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; overflow-x:hidden; background:radial-gradient(circle at top center,#0f1c3a 0%,var(--bg) 75%); color:#f8fafc; font-family:'Plus Jakarta Sans',sans-serif; }
+    a { color:inherit; }
+    .portal-header { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:70px; padding:.75rem max(1rem,calc((100% - 1120px)/2)); border-bottom:1px solid var(--border); background:rgba(5,10,20,.88); backdrop-filter:blur(15px); }
+    .portal-logo { font-family:'Cinzel',serif; font-size:1.35rem; font-weight:800; letter-spacing:1.5px; }
+    .portal-logo span { color:var(--gold); }
+    .live-tag { color:var(--sky); font-size:.75rem; letter-spacing:1px; text-transform:uppercase; }
+    .quick-links { display:flex; justify-content:center; flex-wrap:wrap; gap:.5rem 1.25rem; padding:.75rem 1rem; border-bottom:1px solid var(--border); background:rgba(5,10,20,.65); }
+    .quick-links a, footer a { color:var(--muted); text-decoration:none; }
+    .quick-links a:hover, footer a:hover { color:var(--gold); text-decoration:underline; }
+    main { width:min(1120px,100%); margin:auto; padding:0 1.25rem; }
+    .hero { padding:4rem 1rem 2.5rem; text-align:center; }
+    .dove { margin-bottom:.5rem; font-size:2.5rem; filter:drop-shadow(0 0 12px var(--sky)); }
+    h1,h2,h3 { font-family:'Cinzel',serif; }
+    .hero h1 { margin:.25rem 0; font-size:clamp(2.2rem,7vw,3.5rem); letter-spacing:2px; background:linear-gradient(135deg,#f8fafc 30%,var(--gold),var(--sky)); color:transparent; background-clip:text; -webkit-background-clip:text; }
+    .tagline { color:var(--sky); letter-spacing:2px; text-transform:uppercase; }
+    .motto { max-width:750px; margin:1.25rem auto; color:var(--gold); font-size:1.1rem; font-style:italic; }
+    .intro { max-width:800px; margin:1rem auto 0; color:var(--muted); line-height:1.8; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; padding:1rem 0 4rem; }
+    .card { display:flex; flex-direction:column; align-items:center; padding:1.75rem 1.35rem; border:1px solid var(--border); border-radius:16px; background:rgba(255,255,255,.035); text-align:center; text-decoration:none; transition:transform .2s,border-color .2s,background .2s; }
+    .card:hover { transform:translateY(-5px); border-color:rgba(255,215,0,.55); background:rgba(255,255,255,.08); }
+    .card.primary { border-color:rgba(135,206,235,.4); }
+    .icon { margin-bottom:.75rem; font-size:2.4rem; }
+    .card h2 { margin:.25rem 0 .65rem; font-size:1.2rem; }
+    .card p { flex:1; margin:0 0 1.25rem; color:var(--muted); font-size:.9rem; line-height:1.65; }
+    .button { display:inline-block; padding:.6rem 1.1rem; border:1px solid var(--gold); border-radius:30px; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .sections { padding:2rem 0 4rem; border-top:1px solid var(--border); }
+    .sections h2 { text-align:center; }
+    .sections p { max-width:780px; margin:0 auto; color:var(--muted); line-height:1.8; text-align:center; }
+    .download-links { display:flex; justify-content:center; flex-wrap:wrap; gap:.75rem; margin-top:1.5rem; }
+    .download-links a { padding:.7rem 1rem; border:1px solid var(--sky); border-radius:24px; color:var(--sky); text-decoration:none; }
+    .download-links a:hover { background:rgba(135,206,235,.12); }
+    footer { padding:1.5rem 1rem; border-top:1px solid var(--border); background:rgba(5,10,20,.8); color:var(--muted); font-size:.85rem; text-align:center; }
+    .legal-links { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem 1.25rem; margin-top:.85rem; }
+    @media (max-width:600px) { .portal-header { min-height:62px; } .portal-logo { font-size:1.1rem; } .live-tag { font-size:.65rem; text-align:right; } .hero { padding-top:3rem; } }
+  </style>
+</head>
 <body>
-<!-- Animated Divine Rays Background -->
-<div class="divine-background">
-<div class="light-shafts"></div>
-</div>
-<!-- Sticky Navigation Bar -->
-<header class="portal-header">
-<div class="portal-logo">🕊️ SAURA<span>SITE</span></div>
-<div class="live-tag">Official Ministry Portal</div>
-</header>
-<!-- Main Content & Hero Section -->
-<main>
-<section class="hero-section">
-<div class="divine-symbol">
-<div class="dove-icon">🕊️</div>
-</div>
-<h1 class="ministry-title">SAURA SITE</h1>
-<p class="ministry-tagline">Digital Ministry &amp; Faith Portal</p>
-<p class="ministry-motto">“Equipping, Encouraging, and Inspiring Faith in the Digital Age.”</p>
-<p class="ministry-desc">
-                Welcome to the digital heart of the Saura community. Our mission is to leverage technology to fulfill the Great Commission—bringing Holy Scripture, spiritual media, and a unified platform of faith to the Saura people worldwide.
-            </p>
-</section>
-<!-- Action Cards Grid -->
-<section class="cards-container">
-<!-- Card 1: Buy Danardi Ol App -->
-<a class="action-card card-primary" href="https://www.saurasite.com/buy-danardi-ol-app" target="_blank">
-<span class="card-icon">📱</span>
-<h3 class="card-title">Buy Danardi Ol App</h3>
-<p class="card-desc">Purchase and download the official Danardi Ol mobile application online. Access exclusive features and premium spiritual tools.</p>
-<span class="card-btn">Get the App</span>
-</a>
-<!-- Card 2: Report Payment Issue -->
-<a class="action-card card-warning" href="https://www.saurasite.com/report-payment-issue" target="_blank">
-<span class="card-icon">💳</span>
-<h3 class="card-title">Report Payment Issue</h3>
-<p class="card-desc">Having trouble with a recent transaction or app subscription? Report payment issues directly to our dedicated support team.</p>
-<span class="card-btn">Get Support</span>
-</a>
-<!-- Card 3: About Us -->
-<a class="action-card" href="https://www.saurasite.com/about-us" target="_blank">
-<span class="card-icon">⛪</span>
-<h3 class="card-title">About Us</h3>
-<p class="card-desc">Learn about our vision, mission, and the story behind the dedicated digital ministry serving the Saura community globally.</p>
-<span class="card-btn">Our Story</span>
-</a>
-<!-- Card 4: Join Us -->
-<a class="action-card" href="https://razorpay.me/@ssdigital3432?amount=HjoMTke9guKygQD1nQQJPw%3D%3D" target="_blank">
-<span class="card-icon">🤝</span>
-<h3 class="card-title">Join Us</h3>
-<p class="card-desc">Become a part of our growing digital family. Partner with us in prayer, fellowship, and spreading God's Word across borders.</p>
-<span class="card-btn">Get Involved</span>
-</a>
-<!-- Card 5: Holy Scripture -->
-<a class="action-card" href="YOUR_LINK_HERE" target="_blank">
-<span class="card-icon">📖</span>
-<h3 class="card-title">Holy Scripture</h3>
-<p class="card-desc">Read and study the Holy Bible in the native Saura language. Access Sunday programs, reference books, and song notes.</p>
-<span class="card-btn">Read Online</span>
-</a>
-<!-- Card 6: Spirit & Worship Media -->
-<a class="action-card" href="YOUR_LINK_HERE" target="_blank">
-<span class="card-icon">🎵</span>
-<h3 class="card-title">Spirit &amp; Worship</h3>
-<p class="card-desc">Stream Christian videos, listen to official Saura worship songs, and access an extensive library of spiritual content.</p>
-<span class="card-btn">Watch &amp; Listen</span>
-</a>
-</section>
-<section class="hero-pattern relative overflow-hidden" data-merged-from="Test Home.html">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pb-40 text-center lg:text-left flex flex-col lg:flex-row items-center gap-12">
-<div class="lg:w-1/2 space-y-8 z-10">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-medium mb-4">
-<span class="flex h-2 w-2 rounded-full bg-primary-600"></span>
-                        Welcome to SS DIGITAL
-                    </div>
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                        The Digital Home for <br class="hidden lg:block"/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-400">Saura Community</span>
-</h1>
-<p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Discover, preserve, and celebrate the rich heritage, language, and spiritual life of the Saura community through our dedicated digital applications: <strong>Danardi Ol</strong> and <strong>Soura Bible</strong>.
-                    </p>
-<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-<a class="w-full sm:w-auto bg-primary-600 hover:bg-primary-700 text-white px-8 py-3.5 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2" href="https://play.google.com/store/apps/details?id=com.raison.danardiol">
-<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-</svg>
-                            Download the App
-                        </a>
-<a class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3.5 rounded-full font-semibold text-lg transition-all shadow-sm flex items-center justify-center" href="https://www.saurasite.com/second">
-                            Learn More
-                        </a>
-</div>
-</div>
-<!-- Hero Illustration / Mockup Placeholder -->
-<div class="lg:w-1/2 w-full max-w-md mx-auto relative z-10 mt-12 lg:mt-0">
-<div class="aspect-[4/5] bg-gradient-to-tr from-slate-100 to-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative">
-<div class="absolute top-0 inset-x-0 h-12 bg-slate-50 border-b border-slate-200 flex items-center justify-center px-4">
-<div class="w-1/3 h-1.5 bg-slate-200 rounded-full"></div>
-</div>
-<div class="p-6 pt-16 space-y-4">
-<div class="h-8 bg-slate-200 rounded-lg w-3/4 mb-8"></div>
-<div class="space-y-3">
-<div class="flex gap-3 items-center p-3 bg-primary-50 rounded-xl">
-<div class="w-10 h-10 bg-primary-200 rounded-full flex-shrink-0"></div>
-<div class="h-4 bg-primary-200 rounded w-full"></div>
-</div>
-<div class="flex gap-3 items-center p-3 border border-slate-100 rounded-xl">
-<div class="w-10 h-10 bg-slate-200 rounded-full flex-shrink-0"></div>
-<div class="h-4 bg-slate-200 rounded w-5/6"></div>
-</div>
-<div class="flex gap-3 items-center p-3 border border-slate-100 rounded-xl">
-<div class="w-10 h-10 bg-slate-200 rounded-full flex-shrink-0"></div>
-<div class="h-4 bg-slate-200 rounded w-4/6"></div>
-</div>
-</div>
-</div>
-<div class="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-primary-900/10 to-transparent"></div>
-</div>
-<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-</div>
-</div>
-</section><section class="py-20 bg-white" data-merged-from="Test Home.html" id="about">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-2">App Purpose</h2>
-<h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Why We Built These Applications</h3>
-<p class="text-lg text-slate-600 leading-relaxed">
-                        The core mission of SS DIGITAL is to bridge the gap between technology and tradition. We created <strong>Danardi Ol</strong> and the <strong>Soura Bible</strong> apps with a singular purpose: to serve and preserve the Saura community.
-                    </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div class="bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-sm order-2 md:order-1">
-<h4 class="text-2xl font-bold text-slate-900 mb-4">Empowering Spiritual &amp; Cultural Life</h4>
-<p class="text-slate-600 mb-6 leading-relaxed">
-                            Our platforms act as a digital repository and active community tool. The applications are specifically designed to provide:
-                        </p>
-<ul class="space-y-4 text-slate-700">
-<li class="flex items-start">
-<svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-<span><strong>Bible-related Information:</strong> Accessible directly in the native Soura language for deeper understanding.</span>
-</li>
-<li class="flex items-start">
-<svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-<span><strong>Community Resources:</strong> Easy access to Sunday program papers and schedules.</span>
-</li>
-<li class="flex items-start">
-<svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-<span><strong>Cultural Preservation:</strong> Archiving song notes, traditional Saura dance, and Christian songs to ensure our heritage thrives for future generations.</span>
-</li>
-</ul>
-</div>
-<div class="order-1 md:order-2">
-<img alt="Saura Community Digital Connection" class="rounded-2xl shadow-lg border border-slate-200 w-full h-auto object-cover" src="https://placehold.co/600x400/1e3a8a/ffffff?text=Saura+Community+\nDigital+Connection"/>
-</div>
-</div>
-</div>
-</section><section class="py-20 bg-slate-50 border-y border-slate-200" data-merged-from="Test Home.html" id="features">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Key Features</h2>
-<p class="text-lg text-slate-600 max-w-2xl mx-auto">Everything you need to stay connected with the Saura language, faith, and culture, right in your pocket.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Feature 1 -->
-<div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-<div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-<svg class="h-8 w-8 text-primary-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-slate-900 mb-3">Access in Soura Language</h3>
-<p class="text-slate-600 leading-relaxed">
-                            Read, learn, and engage with spiritual texts and community content entirely translated into the native Soura language for clarity and comfort.
-                        </p>
-</div>
-<!-- Feature 2 -->
-<div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-<div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-<svg class="h-8 w-8 text-amber-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-slate-900 mb-3">Sunday Program Papers</h3>
-<p class="text-slate-600 leading-relaxed">
-                            Stay up-to-date with your local congregation. Access weekly Sunday program schedules, announcements, and important community notes seamlessly.
-                        </p>
-</div>
-<!-- Feature 3 -->
-<div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-<div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-<svg class="h-8 w-8 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-slate-900 mb-3">Song Notes &amp; Culture</h3>
-<p class="text-slate-600 leading-relaxed">
-                            A dedicated space to learn Christian songs with accurate notes, and explore materials related to traditional Saura dance and cultural preservation.
-                        </p>
-</div>
-</div>
-</div>
-</section><section class="py-20 bg-primary-900 text-white text-center px-4" data-merged-from="Test Home.html" id="download">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready to Join the Community?</h2>
-<p class="text-primary-100 text-lg mb-10 max-w-2xl mx-auto">Download the Danardi Ol and Soura Bible apps today and carry your culture and faith wherever you go.</p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<a class="bg-white text-primary-900 hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center justify-center gap-2" href="https://play.google.com/store/apps/details?id=com.raison.danardiol">
-                        Get Danardi Ol
-                    </a>
-<a class="bg-primary-700 border border-primary-600 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center justify-center gap-2" href="https://play.google.com/store/apps/details?id=com.raison.danardiol">
-                        Get Soura Bible
-                    </a>
-</div>
-</div>
-</section></main>
-<!-- Footer -->
-<footer>
-<p>© 2026 Saura Site Digital Ministry. Blessed to serve the community.</p>
-<div class="merged-legal-links" style="margin:1rem auto 0;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;font-size:.85rem;"><a href="https://www.saurasite.com/second" style="color:#cbd5e1;text-decoration:none;">Buy Danardi Ol app</a><a href="https://www.saurasite.com/second" style="color:#cbd5e1;text-decoration:none;">Download Soura Bible</a><a href="https://www.saurasite.com/about-us" style="color:#cbd5e1;text-decoration:none;">About Us</a><a href="https://www.saurasite.com/home_1" style="color:#cbd5e1;text-decoration:none;">Report Payment Issue</a><a href="https://www.saurasite.com/terms-conditions" style="color:#cbd5e1;text-decoration:none;">Terms &amp; Conditions</a><a href="https://www.saurasite.com/privacy-policy" style="color:#cbd5e1;text-decoration:none;">Privacy Policy</a></div></footer>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.portal-header');
-  const menu = document.createElement('nav');
-  menu.className = 'mobile-quick-links';
-  menu.innerHTML = '<a href="#about">About</a><a href="#features">Features</a><a href="#download">Download</a><a href="https://www.saurasite.com/about-us">Contact / About Us</a>';
-  menu.style.cssText = 'display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:0.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(5,10,20,.8);';
-  menu.querySelectorAll('a').forEach(a => { a.style.color='#cbd5e1'; a.style.textDecoration='none'; });
-  if (header) header.insertAdjacentElement('afterend', menu);
-});
-</script></body>
+  <header class="portal-header">
+    <div class="portal-logo">🕊️ SAURA<span>SITE</span></div>
+    <div class="live-tag">Official Ministry Portal</div>
+  </header>
+  <nav class="quick-links" aria-label="Main navigation">
+    <a href="#resources">Resources</a>
+    <a href="#about">About</a>
+    <a href="#downloads">Downloads</a>
+    <a href="about-us.html">About Us</a>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="dove" aria-hidden="true">🕊️</div>
+      <h1>SAURA SITE</h1>
+      <p class="tagline">Digital Ministry &amp; Faith Portal</p>
+      <p class="motto">“Equipping, Encouraging, and Inspiring Faith in the Digital Age.”</p>
+      <p class="intro">Welcome to the digital heart of the Saura community. We use technology to preserve language and culture, share spiritual resources, and bring the community together.</p>
+    </section>
+    <section class="cards" id="resources" aria-label="Saura Site resources">
+      <a class="card primary" href="buy-danardi-ol.html">
+        <span class="icon" aria-hidden="true">📱</span><h2>Buy Danardi OL</h2>
+        <p>View subscription plans and get access to Danardi OL resources.</p><span class="button">View Plans</span>
+      </a>
+      <a class="card" href="report-payment-issues.html">
+        <span class="icon" aria-hidden="true">💳</span><h2>Payment Support</h2>
+        <p>Get help with a payment, subscription, or account activation issue.</p><span class="button">Report an Issue</span>
+      </a>
+      <a class="card" href="about-us.html">
+        <span class="icon" aria-hidden="true">⛪</span><h2>About Us</h2>
+        <p>Learn about our mission to preserve Saura heritage and share spiritual resources.</p><span class="button">Our Story</span>
+      </a>
+      <a class="card" href="https://razorpay.me/@ssdigital3432?amount=HjoMTke9guKygQD1nQQJPw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🤝</span><h2>Join Us</h2>
+        <p>Partner with us in prayer, fellowship, and sharing faith across borders.</p><span class="button">Get Involved</span>
+      </a>
+    </section>
+    <section class="sections" id="about">
+      <h2>Faith, Language &amp; Culture</h2>
+      <p>Our digital applications support access to scripture and Bible study, community resources, song lyrics, and cultural preservation. Visit our About Us page to learn more about the ministry and its work.</p>
+      <div class="download-links"><a href="about-us.html">Discover our mission</a><a href="buy-danardi-ol.html">Explore Danardi OL plans</a></div>
+    </section>
+    <section class="sections" id="downloads">
+      <h2>Get the Apps</h2>
+      <p>Find Danardi OL and Soura Bible on Google Play.</p>
+      <div class="download-links">
+        <a href="https://play.google.com/store/apps/details?id=com.raison.danardiol" target="_blank" rel="noopener noreferrer">Get Danardi OL</a>
+        <a href="https://play.google.com/store/apps/details?id=com.raison.danardiol" target="_blank" rel="noopener noreferrer">Get Soura Bible</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© <span id="year"></span> Saura Site Digital Ministry. Blessed to serve the community.</p>
+    <nav class="legal-links" aria-label="Legal and support links">
+      <a href="buy-danardi-ol.html">Buy Danardi OL</a>
+      <a href="report-payment-issues.html">Report Payment Issue</a>
+      <a href="about-us.html">About Us</a>
+      <a href="terms-conditions.html">Terms &amp; Conditions</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
 </html>
