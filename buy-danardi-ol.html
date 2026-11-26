@@ -1,10 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Buy Danardi OL subscription plans online and explore Saura Site digital resources and tools for the Saura community." />
   <title>Buy Danardi OL Subscription Online</title>
-  <link rel="canonical" href="https://www.saurasite.com/buy-danardi-ol.html" />
+  <link rel="canonical" href="https://www.saurasite.com/buy-danardi-ol-app/" />
+
+  <!-- Replace ca-pub-XXXXXXXXXXXXXXXX with your actual Google AdSense Publisher ID once ready -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
 
@@ -26,7 +31,7 @@
 
     body {
       background-color: var(--bg-color);
-      background-image: 
+      background-image:
         radial-gradient(circle at 15% 20%, rgba(176, 38, 255, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 85% 80%, rgba(0, 243, 255, 0.12) 0%, transparent 40%);
       font-family: 'Rajdhani', sans-serif;
@@ -36,6 +41,10 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 20px;
+    }
+
+    a {
+      color: inherit;
     }
 
     /* Container */
@@ -50,9 +59,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px 0 20px;
       border-bottom: 1px solid rgba(0, 243, 255, 0.15);
-      margin-bottom: 30px;
+      margin-bottom: 16px;
     }
 
     .brand-logo {
@@ -63,6 +74,7 @@
       color: #fff;
       text-transform: uppercase;
       text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+      text-decoration: none;
     }
 
     .brand-logo span {
@@ -78,6 +90,26 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 0.75rem;
       letter-spacing: 1px;
+    }
+
+    .sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+      font-size: 1rem;
+    }
+
+    .sub-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      color: var(--neon-cyan);
+      text-decoration: underline;
     }
 
     /* Hero Banner / Page Header */
@@ -106,10 +138,10 @@
     }
 
     .page-description {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 820px;
+      margin: 0 auto 14px;
       font-size: 1.05rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--text-muted);
     }
 
@@ -166,6 +198,10 @@
       box-shadow: 0 0 35px rgba(176, 38, 255, 0.5), inset 0 0 20px rgba(176, 38, 255, 0.2);
     }
 
+    .pricing-card.tools-card {
+      border-color: rgba(0, 243, 255, 0.45);
+    }
+
     .badge {
       position: absolute;
       top: -14px;
@@ -180,6 +216,12 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       box-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+    }
+
+    .badge.free-badge {
+      background: linear-gradient(90deg, #00b4d8, var(--neon-cyan));
+      color: var(--bg-color);
+      box-shadow: 0 0 10px rgba(0, 243, 255, 0.45);
     }
 
     .plan-title {
@@ -273,13 +315,13 @@
       box-shadow: 0 0 25px rgba(217, 128, 255, 0.8);
     }
 
-    /* Terms of Service Box */
+    /* Terms & Info Boxes */
     .terms-box {
       background: rgba(12, 14, 28, 0.8);
       border: 1px solid rgba(148, 163, 184, 0.2);
       border-radius: 12px;
       padding: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .terms-title {
@@ -290,6 +332,13 @@
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .terms-box p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 10px;
     }
 
     .terms-list {
@@ -312,10 +361,28 @@
     /* Footer */
     .site-footer {
       text-align: center;
-      padding: 20px 0;
+      padding: 24px 0;
       border-top: 1px solid rgba(0, 243, 255, 0.1);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--neon-cyan);
+      text-decoration: underline;
     }
 
     /* Mobile Responsive */
@@ -342,23 +409,34 @@
   <div class="wrapper">
     <!-- Top Navigation Header -->
     <header class="site-header">
-      <div class="brand-logo">DANARDI <span>OL</span></div>
+      <a class="brand-logo" href="index.html">DANARDI <span>OL</span></a>
       <div class="nav-badge">OFFICIAL STORE</div>
     </header>
+
+    <nav class="sub-nav" aria-label="Secondary navigation">
+      <a href="index.html">Home</a>
+      <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a>
+      <a href="report-payment-issues.html">Payment Support</a>
+      <a href="about-us.html">About Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
 
     <!-- Page Header / Titles -->
     <section class="hero-section">
       <h1 class="page-title">Buy Danardi OL Subscription Online</h1>
-      <h2 class="page-subtitle">Access Royong Ol, Christian Notes, Multilingual Bible Studies & Spiritual Quizzes</h2>
+      <h2 class="page-subtitle">Access Royong Ol, Christian Notes, Multilingual Bible Studies &amp; Spiritual Quizzes</h2>
       <p class="page-description">
         Get digital access to Holy Scriptures, song lyrics across 300+ languages, complete multi-language Bible study resources, public uploads, and spiritual quizzes.
+      </p>
+      <p class="page-description">
+        Danardi OL is built to support reading, worship, and study for the Saura community while working alongside our free online utilities at Saura Tools.
       </p>
     </section>
 
     <!-- Plan Selection Title -->
-    <h3 class="section-heading">Select Your Subscription Plan</h3>
+    <h3 class="section-heading">Select Your Subscription Plan or Tool</h3>
 
-    <!-- Pricing Cards Block -->
+    <!-- Pricing & Tools Cards Block -->
     <div class="pricing-container">
       <!-- Basic Plan -->
       <div class="pricing-card">
@@ -367,12 +445,12 @@
           <div class="plan-price">₹200 <span>/ 5 years</span></div>
           <ul class="features-list">
             <li>Royong Ol (Holy Scripture)</li>
-            <li>Songs & Christian Notes</li>
+            <li>Songs &amp; Christian Notes</li>
             <li>Upload Lyrics</li>
             <li>Song Lyrics in 300+ languages</li>
           </ul>
         </div>
-        <a href="https://rzp.io/rzp/lYLnD0k" class="cta-btn">Get Started</a>
+        <a href="https://rzp.io/rzp/lYLnD0k" target="_blank" rel="noopener noreferrer" class="cta-btn">Get Started</a>
       </div>
 
       <!-- Monthly Plan -->
@@ -382,19 +460,19 @@
           <div class="plan-price">₹299 <span>/ month</span></div>
           <ul class="features-list">
             <li>Royong Ol (Holy Scripture)</li>
-            <li>Songs & Christian Notes</li>
+            <li>Songs &amp; Christian Notes</li>
             <li>Upload Lyrics</li>
             <li>Song Lyrics in 300+ languages</li>
             <li>Complete Bible Study in 5 Different Languages</li>
-            <li>Public Uploads & Posts</li>
-            <li>Spiritual Bible Quizs</li>
+            <li>Public Uploads &amp; Posts</li>
+            <li>Spiritual Bible Quizzes</li>
             <li>Priority Feature Support</li>
-            <li>Unlimited Quizzes & Tests</li>
+            <li>Unlimited Quizzes &amp; Tests</li>
             <li>5-Language UI Switching</li>
             <li>Ad-Free Reading Mode</li>
           </ul>
         </div>
-        <a href="YOUR_PAYMENT_LINK_HERE" target="_blank" class="cta-btn">Subscribe Now</a>
+        <a href="report-payment-issues.html" class="cta-btn">Request Pass Link</a>
       </div>
 
       <!-- Master Plan (Featured) -->
@@ -405,37 +483,77 @@
           <div class="plan-price featured-price">₹2000 <span>/ 10 years</span></div>
           <ul class="features-list">
             <li>Royong Ol (Holy Scripture)</li>
-            <li>Songs & Christian Notes</li>
+            <li>Songs &amp; Christian Notes</li>
             <li>Upload Lyrics</li>
             <li>Song Lyrics in 300+ languages</li>
             <li>Complete Bible Study in 5 Different Languages</li>
-            <li>Public Uploads & Posts</li>
-            <li>Spiritual Bible Quizs</li>
+            <li>Public Uploads &amp; Posts</li>
+            <li>Spiritual Bible Quizzes</li>
             <li>Priority Feature Support</li>
           </ul>
         </div>
-        <a href="https://rzp.io/rzp/vBF0DsQ" target="_blank" class="cta-btn featured-btn">Get Best Pass</a>
+        <a href="https://rzp.io/rzp/vBF0DsQ" target="_blank" rel="noopener noreferrer" class="cta-btn featured-btn">Get Best Pass</a>
+      </div>
+
+      <!-- Saura Tools Card -->
+      <div class="pricing-card tools-card">
+        <div class="badge free-badge">Web Tools</div>
+        <div>
+          <h3 class="plan-title">Saura Tools</h3>
+          <div class="plan-price">Free <span>/ web utilities</span></div>
+          <ul class="features-list">
+            <li>Browser-Based Digital Utilities</li>
+            <li>Text &amp; Formatting Helpers</li>
+            <li>Community Resource Tools</li>
+            <li>Direct Access at tools.saurasite.com</li>
+          </ul>
+        </div>
+        <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Saura Tools</a>
       </div>
     </div>
 
-    <!-- Terms of Service & Policy Notice -->
+    <!-- About Danardi OL & Companion Tools -->
     <section class="terms-box">
       <div class="terms-title">
-        <span>⚙</span> Subscription Terms & Service Policies
+        <span>📘</span> About Danardi OL &amp; Saura Tools
+      </div>
+      <p>
+        Danardi OL brings together scripture study notes, song lyrics, language support, and interactive quizzes for everyday reading and community learning. Each subscription tier outlines the features included for that plan duration.
+      </p>
+      <p>
+        For quick browser-based utilities and digital tools outside the subscription plans, visit <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">tools.saurasite.com</a>, or contact support if you need help activating a pass.
+      </p>
+    </section>
+
+    <!-- Terms of Service Box -->
+    <section class="terms-box">
+      <div class="terms-title">
+        <span>⚙</span> Subscription Terms &amp; Service Policies
       </div>
       <ul class="terms-list">
-        <li><span class="highlight-term">Pricing & Plan Modifications:</span> Subscription plans, pricing tiers, included feature availability, and term durations are subject to change over time without prior individual notice.</li>
-        <li><span class="highlight-term">Account Activation:</span> Access to premium features and content is linked to the email address used during checkout and activates within minutes of payment processing.</li>
+        <li><span class="highlight-term">Pricing &amp; Plan Modifications:</span> Subscription plans, pricing tiers, included feature availability, and term durations are subject to change over time without prior individual notice.</li>
+        <li><span class="highlight-term">Account Activation:</span> Access to premium features and content is linked to the email address used during checkout and activates after payment verification.</li>
         <li><span class="highlight-term">Cancellation Policy:</span> Subscriptions can be managed at any time. Active features will remain available through the duration of your purchased period.</li>
-        <li><span class="highlight-term">Device & App Usage:</span> Subscriptions apply across supported mobile application releases and integrated Google Sites web modules.</li>
+        <li><span class="highlight-term">Device &amp; App Usage:</span> Subscriptions apply across supported mobile application releases and integrated web modules.</li>
       </ul>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-      &copy; Danardi OL Digital Platform. All rights reserved.
+      <p>&copy; <span id="year"></span> Danardi OL Digital Platform. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a>
+        <a href="report-payment-issues.html">Report Payment Issue</a>
+        <a href="about-us.html">About Us</a>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
     </footer>
   </div>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
