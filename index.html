@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Saura Site Digital Ministry — faith, language, and cultural resources for the Saura community." />
+  <meta name="description" content="Saura Site Digital Ministry — faith, language, cultural resources, and digital tools for the Saura community." />
   <link rel="canonical" href="https://www.saurasite.com/" />
   <title>Saura Site - Digital Ministry</title>
+
+  <!-- Replace ca-pub-XXXXXXXXXXXXXXXX with your actual Google AdSense Publisher ID once approved/ready -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -38,9 +42,9 @@
     .card h2 { margin:.25rem 0 .65rem; font-size:1.2rem; }
     .card p { flex:1; margin:0 0 1.25rem; color:var(--muted); font-size:.9rem; line-height:1.65; }
     .button { display:inline-block; padding:.6rem 1.1rem; border:1px solid var(--gold); border-radius:30px; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
-    .sections { padding:2rem 0 4rem; border-top:1px solid var(--border); }
-    .sections h2 { text-align:center; }
-    .sections p { max-width:780px; margin:0 auto; color:var(--muted); line-height:1.8; text-align:center; }
+    .sections { padding:2.25rem 0 3.5rem; border-top:1px solid var(--border); }
+    .sections h2 { text-align:center; margin-bottom:1rem; }
+    .sections p { max-width:820px; margin:0 auto 1rem; color:var(--muted); line-height:1.85; text-align:center; }
     .download-links { display:flex; justify-content:center; flex-wrap:wrap; gap:.75rem; margin-top:1.5rem; }
     .download-links a { padding:.7rem 1rem; border:1px solid var(--sky); border-radius:24px; color:var(--sky); text-decoration:none; }
     .download-links a:hover { background:rgba(135,206,235,.12); }
@@ -57,6 +61,7 @@
   <nav class="quick-links" aria-label="Main navigation">
     <a href="#resources">Resources</a>
     <a href="#about">About</a>
+    <a href="#tools-guide">Saura Tools</a>
     <a href="#downloads">Downloads</a>
     <a href="about-us.html">About Us</a>
   </nav>
@@ -66,12 +71,17 @@
       <h1>SAURA SITE</h1>
       <p class="tagline">Digital Ministry &amp; Faith Portal</p>
       <p class="motto">“Equipping, Encouraging, and Inspiring Faith in the Digital Age.”</p>
-      <p class="intro">Welcome to the digital heart of the Saura community. We use technology to preserve language and culture, share spiritual resources, and bring the community together.</p>
+      <p class="intro">Welcome to the digital heart of the Saura community. We build accessible digital tools, preserve language and cultural heritage, share scripture and worship resources, and connect families and believers across generations.</p>
     </section>
+
     <section class="cards" id="resources" aria-label="Saura Site resources">
       <a class="card primary" href="buy-danardi-ol.html">
         <span class="icon" aria-hidden="true">📱</span><h2>Buy Danardi OL</h2>
         <p>View subscription plans and get access to Danardi OL resources.</p><span class="button">View Plans</span>
+      </a>
+      <a class="card" href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🛠️</span><h2>Saura Tools</h2>
+        <p>Explore online utilities, text and script helpers, and digital resources built for the community.</p><span class="button">Open Tools</span>
       </a>
       <a class="card" href="report-payment-issues.html">
         <span class="icon" aria-hidden="true">💳</span><h2>Payment Support</h2>
@@ -86,14 +96,23 @@
         <p>Partner with us in prayer, fellowship, and sharing faith across borders.</p><span class="button">Get Involved</span>
       </a>
     </section>
+
     <section class="sections" id="about">
       <h2>Faith, Language &amp; Culture</h2>
-      <p>Our digital applications support access to scripture and Bible study, community resources, song lyrics, and cultural preservation. Visit our About Us page to learn more about the ministry and its work.</p>
+      <p>Our digital work focuses on making scripture study, worship songs, community literature, and language resources accessible on modern devices. By combining respectful cultural preservation with practical software, Saura Site helps readers, students, and families stay connected to their heritage.</p>
+      <p>Whether you are exploring Bible readings, looking for song lyrics and study materials, or supporting digital outreach for the Saura community, every resource is designed to be clear, dependable, and easy to use.</p>
       <div class="download-links"><a href="about-us.html">Discover our mission</a><a href="buy-danardi-ol.html">Explore Danardi OL plans</a></div>
     </section>
+
+    <section class="sections" id="tools-guide">
+      <h2>Community Utilities &amp; Digital Tools</h2>
+      <p>Through <strong>Saura Tools</strong> (`tools.saurasite.com`), visitors can access helpful browser-based utilities designed to support everyday digital tasks, text formatting, and community workflows alongside our mobile applications.</p>
+      <div class="download-links"><a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Launch Saura Tools</a></div>
+    </section>
+
     <section class="sections" id="downloads">
       <h2>Get the Apps</h2>
-      <p>Find Danardi OL and Soura Bible on Google Play.</p>
+      <p>Find Danardi OL and Soura Bible on Google Play for mobile reading, study, and community resources.</p>
       <div class="download-links">
         <a href="https://play.google.com/store/apps/details?id=com.raison.danardiol" target="_blank" rel="noopener noreferrer">Get Danardi OL</a>
         <a href="https://play.google.com/store/apps/details?id=com.raison.danardiol" target="_blank" rel="noopener noreferrer">Get Soura Bible</a>
@@ -104,6 +123,7 @@
     <p>© <span id="year"></span> Saura Site Digital Ministry. Blessed to serve the community.</p>
     <nav class="legal-links" aria-label="Legal and support links">
       <a href="buy-danardi-ol.html">Buy Danardi OL</a>
+      <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a>
       <a href="report-payment-issues.html">Report Payment Issue</a>
       <a href="about-us.html">About Us</a>
       <a href="terms-conditions.html">Terms &amp; Conditions</a>
