@@ -9,6 +9,7 @@
 
   <!-- Replace ca-pub-XXXXXXXXXXXXXXXX with your actual Google AdSense Publisher ID once ready -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
 
@@ -30,7 +31,7 @@
 
     body {
       background-color: var(--bg-color);
-      background-image: 
+      background-image:
         radial-gradient(circle at 15% 20%, rgba(176, 38, 255, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 85% 80%, rgba(0, 243, 255, 0.12) 0%, transparent 40%);
       font-family: 'Rajdhani', sans-serif;
@@ -40,6 +41,10 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 20px;
+    }
+
+    a {
+      color: inherit;
     }
 
     /* Container */
@@ -54,9 +59,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px 0 20px;
       border-bottom: 1px solid rgba(0, 243, 255, 0.15);
-      margin-bottom: 30px;
+      margin-bottom: 16px;
     }
 
     .brand-logo {
@@ -67,6 +74,7 @@
       color: #fff;
       text-transform: uppercase;
       text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+      text-decoration: none;
     }
 
     .brand-logo span {
@@ -82,6 +90,26 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 0.75rem;
       letter-spacing: 1px;
+    }
+
+    .sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding-bottom: 22px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+      font-size: 1rem;
+    }
+
+    .sub-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      color: var(--neon-cyan);
+      text-decoration: underline;
     }
 
     /* Hero Banner / Page Header */
@@ -111,10 +139,19 @@
 
     .page-description {
       max-width: 850px;
-      margin: 0 auto;
+      margin: 0 auto 14px;
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--text-muted);
+    }
+
+    .page-description a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+    }
+
+    .page-description a:hover {
+      text-decoration: underline;
     }
 
     /* Stats Grid */
@@ -183,6 +220,8 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
     }
 
     .about-card:hover {
@@ -207,8 +246,21 @@
 
     .about-card-text {
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--text-muted);
+      flex-grow: 1;
+    }
+
+    .about-card-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .about-card-link:hover {
+      text-decoration: underline;
     }
 
     /* Mission & Vision Box */
@@ -247,6 +299,24 @@
       color: var(--text-muted);
     }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--neon-cyan);
+      text-decoration: underline;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .page-title {
@@ -269,16 +339,28 @@
   <div class="wrapper">
     <!-- Top Navigation Header -->
     <header class="site-header">
-      <div class="brand-logo">SAURA <span>SITE</span></div>
+      <a class="brand-logo" href="index.html">SAURA <span>SITE</span></a>
       <div class="nav-badge">ABOUT US</div>
     </header>
+
+    <nav class="sub-nav" aria-label="Site navigation">
+      <a href="index.html">Home</a>
+      <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a>
+      <a href="buy-danardi-ol.html">Buy Danardi OL</a>
+      <a href="report-payment-issues.html">Payment Support</a>
+      <a href="terms-conditions.html">Terms &amp; Conditions</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
       <h1 class="page-title">About Saura Site Digital Ministry</h1>
-      <h2 class="page-subtitle">Preserving Cultural Heritage, Sacred Literature & Multilingual Wisdom</h2>
+      <h2 class="page-subtitle">Preserving Cultural Heritage, Sacred Literature &amp; Multilingual Wisdom</h2>
       <p class="page-description">
         <strong>SSDM</strong> <strong><em>( Saura Site Digital Ministry )</em></strong> is a dedicated digital ecosystem created to preserve, digitize, and distribute indigenous literature, holy scriptures including <strong>Royong Ol</strong> and <strong>Roitad Baibol</strong> parallel bible study in 5 different languages, spiritual music lyrics, and interactive learning tools across local and global communities.
+      </p>
+      <p class="page-description">
+        Alongside Danardi OL, we provide browser-based utilities at <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a> to support practical everyday tasks for readers, creators, and community members.
       </p>
     </section>
 
@@ -299,13 +381,13 @@
     </div>
 
     <!-- Core Pillars Grid -->
-    <h3 class="section-heading">What We Build & Preserve</h3>
+    <h3 class="section-heading">What We Build &amp; Preserve</h3>
     <section class="about-grid">
-      
+
       <!-- Card 1 -->
       <div class="about-card">
         <div class="card-icon">📖</div>
-        <h4 class="about-card-title">Holy Scriptures & Literature</h4>
+        <h4 class="about-card-title">Holy Scriptures &amp; Literature</h4>
         <p class="about-card-text">
           Digitizing essential literature including <em>Royong Ol</em> and traditional heritage texts like <em>Sanenken</em> into high-quality, responsive web and mobile interfaces for future generations.
         </p>
@@ -314,7 +396,7 @@
       <!-- Card 2 -->
       <div class="about-card">
         <div class="card-icon">✝️</div>
-        <h4 class="about-card-title">Bible Study & Notes</h4>
+        <h4 class="about-card-title">Bible Study &amp; Notes</h4>
         <p class="about-card-text">
           Offering structured Bible study guides and Christian notes in 5 core languages (Saura, Odia, Telugu, Hindi, and English), enabling deep spiritual comprehension across regions.
         </p>
@@ -338,26 +420,47 @@
         </p>
       </div>
 
+      <!-- Card 5: Saura Tools -->
+      <div class="about-card">
+        <div class="card-icon">🛠️</div>
+        <h4 class="about-card-title">Saura Tools &amp; Web Utilities</h4>
+        <p class="about-card-text">
+          Accessible online tools at <strong>tools.saurasite.com</strong> built to assist with text processing, formatting, and everyday digital workflows for the Saura community.
+        </p>
+        <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer" class="about-card-link">Visit Saura Tools &rarr;</a>
+      </div>
+
     </section>
 
     <!-- Mission & Vision -->
     <section class="mission-box">
       <div class="mission-title">
-        <span>✦</span> Our Mission & Vision
+        <span>✦</span> Our Mission &amp; Vision
       </div>
       <p class="mission-text">
-        Our core goal is to bridge ancient cultural roots with modern digital accessibility. By leveraging intuitive UI design, multi-language switching, and interactive technology, Danardi OL ensures that spiritual literature and regional scripts remain accessible to anyone, anywhere.
+        Our core goal is to bridge ancient cultural roots with modern digital accessibility. By leveraging intuitive UI design, multi-language switching, and interactive technology, Danardi OL and Saura Tools ensure that spiritual literature, practical utilities, and regional scripts remain accessible to anyone, anywhere.
       </p>
       <p class="mission-text">
-        Whether you are seeking daily scripture study, contributing song lyrics, or participating in spiritual quizzes, Danardi OL serves as your complete digital spiritual companion.
+        Whether you are seeking daily scripture study, contributing song lyrics, using browser tools at <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan);">tools.saurasite.com</a>, or participating in spiritual quizzes, our platform serves as your complete digital companion.
       </p>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-      &copy; Danardi OL Digital Platform. All rights reserved.
+      <p>&copy; <span id="year"></span> Danardi OL &amp; Saura Site Digital Platform. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="https://tools.saurasite.com" target="_blank" rel="noopener noreferrer">Saura Tools</a>
+        <a href="buy-danardi-ol.html">Buy Danardi OL</a>
+        <a href="report-payment-issues.html">Report Payment Issue</a>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
     </footer>
   </div>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
